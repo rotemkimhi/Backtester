@@ -142,6 +142,6 @@
 }
 
 .footer {
-  @apply mt-8 text-gray-500 text-sm text-center;
+  @apply mt-8 text-gray-400 text-sm text-center;
 }
 
