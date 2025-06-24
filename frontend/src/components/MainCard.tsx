@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
 import type { BacktestResult, Strategy } from "../interfaces";
-import { BarChartIcon } from "@radix-ui/react-icons";
 import StrategyFileLoader from "./StrategyFileLoader";
 import EquityChart from "./EquityChart";
 import MetricsGrid from "./MetricsGrid";
@@ -34,8 +33,7 @@ export function MainCard({
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.8, type: "spring" }}
     >
-      <div className="">
-        <BarChartIcon className="barIcon" width={32} height={32} />
+      <div className="flex items-center gap-3 mb-8">
         <span className="headline">
           Strategy Backtester
         </span>
