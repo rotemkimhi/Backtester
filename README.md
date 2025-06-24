@@ -1,2 +1,0 @@
-# Backtester
-backtests trading strategies
