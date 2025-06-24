@@ -29,7 +29,7 @@ export default function App() {
 
     try {
       const res = await axios.post<BacktestResult>(
-        "http://localhost:8000/backtest",
+        `${import.meta.env.VITE_API_URL}/backtest`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
