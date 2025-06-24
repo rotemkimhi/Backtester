@@ -27,7 +27,7 @@ export default function StrategyFileLoader({
   async function fetchStrategies() {
     setDropdownLoading(true);
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_BASE}/backend/strategies`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/backend/strategies`);
       console.log("Fetched strategies:", res.data);
       setStrategies(Array.isArray(res.data) ? res.data : []);
     } catch (err) {
