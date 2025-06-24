@@ -54,7 +54,7 @@ def ml_xgboost(
     y_train, y_test = y.iloc[:split], y.iloc[split:]
     df_test = df.iloc[split:].copy().reset_index(drop=True)
 
-    model = XGBClassifier(n_estimators=50, use_label_encoder=False, eval_metric='logloss', random_state=42)
+    model = XGBClassifier(n_estimators=15, use_label_encoder=False, eval_metric='logloss', random_state=42)
     model.fit(X_train, y_train)
     proba_up = model.predict_proba(X_test)[:,1]
     df_test['proba_up'] = proba_up
