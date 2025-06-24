@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+/* Main background for the app */
+.main-bg {
+  @apply min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex flex-col items-center justify-center px-2;
+}
+
+/* Card */
+.card {
+  @apply w-full max-w-4xl bg-[rgba(20,30,40,0.9)] backdrop-blur-lg shadow-2xl rounded-2xl p-10 flex flex-col items-center border border-gray-700;
+}
+
+
+/* Big headline */
+.headline {
+  @apply text-6xl bg-gradient-to-tr from-indigo-400 via-sky-400 to-emerald-400 bg-clip-text text-transparent mb-8 flex items-center gap-3 tracking-tight py-4;
+}
+
+.barIcon{
+  @apply bg-gradient-to-tr from-red-400 via-green-400 to-cyan-400 bg-clip-text text-transparent flex items-center gap-3 tracking-tight py-4;
+}
+
+/* Subtitle */
+.subtitle {
+  @apply mb-8 text-gray-300 text-lg text-center max-w-lg;
+}
+
+/* Upload (label) button */
+.upload-label {
+  @apply cursor-pointer flex items-center gap-2 px-5 py-3 rounded-lg bg-gradient-to-r from-blue-800 to-indigo-800 hover:from-blue-700 hover:to-indigo-700 border border-blue-400 text-blue-200 font-semibold shadow-inner transition;
+}
+
+/* File name preview */
+.file-selected {
+  @apply text-green-400 text-sm;
+}
+
+/* Main action button */
+.backtest-btn {
+  @apply cursor-pointer bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-2 px-8 rounded-lg shadow-md mb-4 disabled:opacity-50;
+}
+
+/* Success and error message styling */
+.success-message {
+  @apply mb-4 p-2 mt-4 rounded text-center bg-green-800 text-green-200 border border-green-400 font-semibold;
+}
+.error-message {
+  @apply mb-4 p-2 mt-4 rounded text-center bg-red-800 text-red-200 border border-red-400 font-semibold;
+}
+
+/* Metrics grid */
+.metrics-grid {
+  @apply grid grid-cols-2 gap-6 mt-6 w-full max-w-lg mx-auto;
+}
+.metric-card {
+  @apply rounded-2xl bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 border border-gray-700 shadow-md p-7 text-center flex flex-col items-center min-w-[140px] min-h-[110px];
+}
+.metric-title {
+  @apply uppercase tracking-widest text-base text-gray-400 mb-2;
+}
+.metric-value {
+  @apply font-extrabold text-4xl text-indigo-300;
+}
+
+
+/* Equity curve section */
+.equity-title {
+  @apply mt-8 mb-2 font-semibold text-lg text-indigo-200 flex items-center gap-2;
+}
+.equity-chart {
+  @apply w-full h-72 bg-gray-800 rounded-xl p-4 pt-8;
+  /* Removed overflow-x-auto! */
+  overflow: visible !important;
+  position: relative;
+}
+
+/* Chart panning and zoom styles */
+.chart-pan {
+  position: relative;
+}
+
+/* Custom zoom slider in the top-left */
+.zoom-slider-container {
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  background: rgba(30, 41, 59, 0.96); /* dark bg with slight transparency */
+  padding: 7px 15px;
+  border-radius: 9999px; /* pill */
+  box-shadow: 0 2px 8px #0001;
+  user-select: none;
+}
+
+.zoom-label {
+  color: #7dd3fc; /* cyan-300 */
+  font-size: 0.92rem;
+  margin-right: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.zoom-slider {
+  width: 100px;
+  accent-color: #60a5fa; /* blue-400 */
+  margin-right: 10px;
+  height: 3px;
+  border-radius: 10px;
+}
+
+.zoom-handle {
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle at 60% 60%, #38bdf8 60%, #0369a1 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #38bdf8cc;
+  border: 2px solid #fff3;
+  pointer-events: none; /* decorative only */
+}
+
+/* Optionally, smooth slider thumb: */
+.zoom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 6px #38bdf8bb;
+  border: 2px solid #fff2;
+  cursor: pointer;
+}
+.zoom-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 6px #38bdf8bb;
+  border: 2px solid #fff2;
+  cursor: pointer;
+}
+
+/* Hide ugly default focus ring on slider: */
+.zoom-slider:focus {
+  outline: none;
+}
+
+/* Make chart not overflow parent (optional) */
+.chart-pan {
+  overflow: visible !important;
+}
+
